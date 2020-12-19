@@ -1,0 +1,155 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  YOUR MOBILE/BASE STYLES GO HERE
+*********************************************************************/
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+    font-size: 16px;
+}
+
+/* responsive images */
+img {
+    width: 120%;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: .8em;
+}
+
+figcaption,
+p {
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+hr {
+    height: 4px;
+    background: gray;
+}
+
+p {
+    align-items: center;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+footer {
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.footer {
+    text-transform: uppercase;
+    margin-left: -700px;
+    justify-content: space-between;
+}
+
+.sources {
+    margin: 30px;
+}
+
+.p {
+    margin: 300px;
+    justify-content: space-between;
+}
+
+.container,
+.icon-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.main_img {
+    width: 100%;
+}
+
+.head-photo {
+    font-size: 1em;
+    color: gray;
+    margin: 5px;
+}
+
+.icon-container img {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.graphic-text {
+    margin-left: auto;
+    align-items: center;
+}
+
+/*********************************************************************
+  YOUR TABLET/DESKTOP STYLES GO HERE
+*********************************************************************/
+@media(min-width: 681px) {
+
+    /* Any adjustments for tablets and larger go here.
+    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+    p.intro {
+        max-width: 65%,
+    }
+
+    .icon-container {
+        /* Flex box styles go on the flex box element */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .graphic {
+        /* There are many ways to handle sizing, but flex-basis is the one that I like best for control.
+     * There are three elements so I made it 30%. With justify content set to space between, the extra 3% per element will go to negative space
+     * serving as gutters */
+        flex-basis: 80%;
+        align-items: center;
+        margin-left: 70px;
+        /* font-size: 1.3em; */
+    }
+
+    .graphic-text {
+        padding: 80px;
+        margin-left: 50px;
+        /* width: 500px; */
+    }
+}
+
+/*********************************************************************
+  YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 700px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 729px or larger -- so desktop */
+    .container {
+        max-width: 600px;
+    }
+}
